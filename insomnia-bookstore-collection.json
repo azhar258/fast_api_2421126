@@ -1,0 +1,181 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-24T10:28:20.644+05:30",
+  "__export_source": "insomnia.desktop.app",
+  "resources": [
+    {
+      "_id": "wrk_bookstore_api",
+      "parentId": null,
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "name": "Bookstore API",
+      "description": "Requests for the sample FastAPI bookstore service.",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_bookstore_base",
+      "parentId": "wrk_bookstore_api",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://127.0.0.1:8000",
+        "book_id": "1"
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1795496300000,
+      "_type": "environment"
+    },
+    {
+      "_id": "fld_bookstore_books",
+      "parentId": "wrk_bookstore_api",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "name": "Books",
+      "description": "CRUD requests for books.",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1795496300000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_bookstore_root",
+      "parentId": "fld_bookstore_books",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "url": "{{ _.base_url }}/",
+      "name": "API welcome",
+      "description": "Check that the API is responding.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1795496300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_bookstore_list",
+      "parentId": "fld_bookstore_books",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "url": "{{ _.base_url }}/books",
+      "name": "List books",
+      "description": "Return all books.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1795496200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_bookstore_get",
+      "parentId": "fld_bookstore_books",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "url": "{{ _.base_url }}/books/{{ _.book_id }}",
+      "name": "Get book by ID",
+      "description": "The default book_id is 1. Change it in the Base Environment as needed.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1795496100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_bookstore_create",
+      "parentId": "fld_bookstore_books",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "url": "{{ _.base_url }}/books",
+      "name": "Create book",
+      "description": "Create a book; the API assigns its ID.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"The Fellowship of the Ring\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"isbn\": \"9780618640157\",\n  \"published_date\": \"1954-07-29\",\n  \"price\": 19.99\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1795496000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_bookstore_update",
+      "parentId": "fld_bookstore_books",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "url": "{{ _.base_url }}/books/{{ _.book_id }}",
+      "name": "Update book",
+      "description": "Replace all editable fields for the selected book.",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"The Fellowship of the Ring\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"isbn\": \"9780618640157\",\n  \"published_date\": \"1954-07-29\",\n  \"price\": 19.99\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1795495900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_bookstore_delete",
+      "parentId": "fld_bookstore_books",
+      "modified": 1795496300000,
+      "created": 1795496300000,
+      "url": "{{ _.base_url }}/books/{{ _.book_id }}",
+      "name": "Delete book",
+      "description": "Deletes the selected book from the in-memory API. The default book_id is 1.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1795495800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "_type": "request"
+    }
+  ]
+}
