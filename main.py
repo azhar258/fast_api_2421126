@@ -74,7 +74,6 @@ def read_root() -> dict[str, str]:
 def list_books() -> list[Book]:
     return list(books.values())
 
-
 @app.get("/books/{book_id}", response_model=Book)
 def get_book(book_id: int = Path(gt=0)) -> Book:
     book = books.get(book_id)
